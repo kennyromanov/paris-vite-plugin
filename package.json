@@ -1,8 +1,8 @@
 {
   "name": "paris-vite-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Module Federating Tool (Alpha)",
-  "keywords": [ "microfrontends", "module federation", "module federation on vue", "alpha version" ],
+  "keywords": ["microfrontends", "module federation", "module federation on vue", "alpha version"],
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,6 +35,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@module-federation/enhanced": "^0.17.1",
     "@module-federation/vite": "^1.7.1"
   }
 }
