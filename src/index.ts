@@ -1,4 +1,4 @@
-import federation from '@originjs/vite-plugin-federation';
+import { federation } from '@module-federation/vite';
 
 
 // Third-parties

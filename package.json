@@ -1,18 +1,21 @@
 {
   "name": "paris-vite-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Module Federating Tool (Alpha)",
-  "keywords": ["microfrontends", "module federation", "module federation on vue", "alpha version"],
+  "keywords": [ "microfrontends", "module federation", "module federation on vue", "alpha version" ],
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "scripts": {
     "build:types": "tsc && tsc-alias",
-    "build": "bin/build && npm run build:types",
+    "build": "bin/build.mjs && npm run build:types",
     "prepare": "npm run build"
   },
   "files": [
@@ -25,11 +28,13 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-typescript": "^7.27.1",
-    "@originjs/vite-plugin-federation": "^1.4.1",
     "@types/node": "^24.0.15",
     "esbuild": "^0.25.8",
     "esbuild-plugin-import-glob": "^0.1.1",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@module-federation/vite": "^1.7.1"
   }
 }

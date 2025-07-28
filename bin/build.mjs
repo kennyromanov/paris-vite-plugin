@@ -5,7 +5,7 @@ import esbuild from 'esbuild';
 
 esbuild.build({
     entryPoints: [ 'src/index.ts' ],
-    external: [ '@originjs/vite-plugin-federation' ],
+    external: [ '@module-federation/vite' ],
     outfile: 'dist/index.cjs',
     bundle: true,
     platform: 'node',
@@ -17,7 +17,7 @@ esbuild.build({
 
 esbuild.build({
     entryPoints: [ 'src/index.ts' ],
-    external: [ '@originjs/vite-plugin-federation' ],
+    external: [ '@module-federation/vite' ],
     outfile: 'dist/index.js',
     bundle: true,
     platform: 'node',
