@@ -1,8 +1,8 @@
 # paris-vite-plugin
 
-A lightweight wrapper around the `@module-federation/vite` plugin that powers Module Federation in Vite apps. It exports the federation plugin as `paris` and provides a `createParis` helper to bootstrap the runtime at startup.
+A lightweight wrapper for the `@module-federation/vite` that powers [Paris](https://www.npmjs.com/package/@kennyromanov/paris) — a Module Federating Tool for Vite apps. It exports the federation plugin and provides a `createParis` helper to bootstrap the runtime.
 
-### Remote app example
+### Here's a simplae example:
 
 ```ts
 // vite.config.ts
@@ -19,13 +19,12 @@ export default defineConfig({
       exposes: {
         './Button': resolve(__dirname, './src/Button.ts'),
       },
-      shared: ['vue'],
     }),
   ],
 });
 ```
 
-### Host app example
+### Shell host example
 
 ```ts
 // vite.config.ts
@@ -39,15 +38,14 @@ export default defineConfig({
     paris({
       name: 'shell',
       remotes: {
-        foo: 'http://localhost:5174/assets/remoteEntry.js',
+        foo: 'http://localhost:5174/assets/paris.js',
       },
-      shared: ['vue'],
     }),
   ],
 });
 ```
 
-### Runtime setup with `createParis`
+### Runtime example:
 
 ```ts
 // main.ts
@@ -56,7 +54,7 @@ import { createParis } from 'paris-vite-plugin';
 createParis({
   name: 'shell',
   remotes: {
-    foo: 'http://localhost:5174/assets/remoteEntry.js',
+    foo: 'http://localhost:5174/assets/paris.js',
   },
 });
 ```
@@ -71,7 +69,7 @@ createParis({
 npm i -D paris-vite-plugin
 ```
 
-2. Add `paris` to the `plugins` array in your `vite.config.ts`.
+2. Add `paris` to the `plugins` section in your `vite.config.ts`.
 
 3. Configure `remotes` or `exposes` and run Vite:
 
