@@ -24,7 +24,7 @@ export default defineConfig({
 });
 ```
 
-### Shell host example
+### Shell host example:
 
 ```ts
 // vite.config.ts
